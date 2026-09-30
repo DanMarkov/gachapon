@@ -40,7 +40,7 @@ export default function App() {
       <header className="header">
         <div className="container header-inner">
           <div className="logo">
-            <img src="/logo.png" alt="GACHAPON" className="logo-img" />
+            <img src="logo.png" alt="GACHAPON" className="logo-img" />
           </div>
           <nav className="nav">
             <a href="#catalog">Каталог</a>
