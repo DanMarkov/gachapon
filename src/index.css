@@ -269,3 +269,20 @@ a.add.outline:hover { background: var(--pink); }
 @media (max-width: 800px) {
   .product, .cart-layout { grid-template-columns: 1fr; }
 }
+
+/* Воздух для текстовых страниц */
+.text-page {
+  background: var(--card); border-radius: 14px; padding: 28px 32px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.07); width: 100%;
+}
+.text-page h1 { margin-bottom: 18px; }
+.page-top h1 { margin-bottom: 20px; }
+
+@media (max-width: 700px) {
+  .container { padding: 0 22px; }
+  .page-top { padding: 28px 0 16px; }
+  .text-page { padding: 22px 22px; }
+  .hero { padding: 48px 22px; }
+  .catalog { padding: 32px 0 12px; }
+  .about, .contacts { padding: 20px 0; }
+}
