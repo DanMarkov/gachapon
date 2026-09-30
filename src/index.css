@@ -1,0 +1,172 @@
+:root {
+  --pink: #ff5c8a;
+  --pink-dark: #e0446f;
+  --dark: #1f1b2e;
+  --bg: #fdf6f9;
+  --card: #ffffff;
+  --accent: #ffd166;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--dark);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+img { max-width: 100%; display: block; }
+
+.header {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--dark); color: #fff;
+}
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px; gap: 16px;
+}
+.logo { font-size: 1.3rem; letter-spacing: 2px; }
+.nav { display: flex; gap: 20px; flex: 1; justify-content: center; }
+.nav a { color: #fff; text-decoration: none; opacity: 0.85; }
+.nav a:hover { opacity: 1; color: var(--accent); }
+.cart-button {
+  position: relative; background: var(--pink); color: #fff;
+  border: none; border-radius: 20px; padding: 8px 16px;
+  font-size: 0.95rem; cursor: pointer;
+}
+.cart-button:hover { background: var(--pink-dark); }
+.cart-badge {
+  position: absolute; top: -6px; right: -6px;
+  background: var(--accent); color: var(--dark);
+  border-radius: 50%; width: 20px; height: 20px;
+  font-size: 0.75rem; font-weight: bold;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--pink), #b56cff);
+  color: #fff; padding: 70px 0; text-align: center;
+}
+.hero h2 { font-size: 2.2rem; margin-bottom: 12px; }
+.hero p { opacity: 0.9; margin-bottom: 24px; font-size: 1.05rem; }
+.hero-cta {
+  background: var(--accent); color: var(--dark);
+  padding: 12px 32px; border-radius: 24px;
+  text-decoration: none; font-weight: bold;
+}
+.hero-cta:hover { filter: brightness(1.05); }
+
+.catalog { padding: 50px 0 20px; }
+.catalog h2, .about h2, .contacts h2 { margin-bottom: 20px; }
+.filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
+.filter {
+  border: 1px solid var(--pink); background: transparent;
+  color: var(--pink); border-radius: 20px;
+  padding: 7px 18px; cursor: pointer; font-size: 0.9rem;
+}
+.filter.active { background: var(--pink); color: #fff; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+.card {
+  background: var(--card); border-radius: 14px; overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+  display: flex; flex-direction: column;
+  position: relative; transition: transform 0.15s;
+}
+.card:hover { transform: translateY(-4px); }
+.badge {
+  position: absolute; top: 10px; left: 10px;
+  background: var(--accent); color: var(--dark);
+  padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: bold;
+  z-index: 1;
+}
+.card img { aspect-ratio: 1; object-fit: cover; }
+.card h3 { font-size: 1.05rem; padding: 14px 16px 6px; }
+.card-desc { padding: 0 16px; font-size: 0.88rem; opacity: 0.75; flex: 1; }
+.card-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 16px;
+}
+.price { font-weight: bold; color: var(--pink-dark); }
+.add {
+  background: var(--pink); color: #fff; border: none;
+  border-radius: 20px; padding: 9px 18px;
+  cursor: pointer; font-size: 0.9rem;
+}
+.add:hover { background: var(--pink-dark); }
+.add.outline {
+  background: transparent; color: var(--pink);
+  border: 1px solid var(--pink);
+}
+.add.wide { width: 100%; }
+
+.about, .contacts { padding: 30px 0; }
+.about p, .contacts p { line-height: 1.6; opacity: 0.85; }
+
+.footer {
+  background: var(--dark); color: #fff;
+  text-align: center; padding: 24px 0; margin-top: 40px;
+  font-size: 0.9rem; opacity: 0.95;
+}
+
+.cart-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.45);
+  display: flex; justify-content: flex-end; z-index: 100;
+}
+.cart-panel {
+  background: #fff; width: 100%; max-width: 420px;
+  padding: 24px; overflow-y: auto;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.cart-header { display: flex; justify-content: space-between; align-items: center; }
+.close {
+  background: none; border: none; font-size: 1.2rem; cursor: pointer;
+  color: var(--dark);
+}
+.cart-empty { opacity: 0.6; text-align: center; padding: 30px 0; }
+.cart-items { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.cart-item {
+  display: flex; align-items: center; gap: 12px;
+  border-bottom: 1px solid #eee; padding-bottom: 14px;
+}
+.cart-item img { width: 60px; height: 60px; border-radius: 8px; object-fit: cover; }
+.cart-item-info { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.cart-item-name { font-size: 0.9rem; }
+.qty { display: flex; align-items: center; gap: 8px; }
+.qty button {
+  width: 26px; height: 26px; border-radius: 50%;
+  border: 1px solid var(--pink); background: #fff;
+  color: var(--pink); cursor: pointer; font-size: 0.95rem;
+}
+.qty span { font-weight: bold; min-width: 16px; text-align: center; }
+.remove { background: none; border: none; color: #999; cursor: pointer; }
+.remove:hover { color: var(--pink); }
+.cart-total {
+  display: flex; justify-content: space-between; font-size: 1.05rem;
+  border-top: 1px solid #eee; padding-top: 14px;
+}
+.cart-total strong { color: var(--pink-dark); }
+
+.checkout-form { display: flex; flex-direction: column; gap: 14px; }
+.checkout-form h3 { margin-bottom: 4px; }
+.checkout-form label {
+  display: flex; flex-direction: column; gap: 6px;
+  font-size: 0.85rem; font-weight: 600;
+}
+.checkout-form input, .checkout-form textarea {
+  border: 1px solid #ddd; border-radius: 8px;
+  padding: 10px; font-size: 0.95rem; font-family: inherit;
+}
+.checkout-form input:focus, .checkout-form textarea:focus {
+  outline: 2px solid var(--pink); border-color: transparent;
+}
+.checkout-actions { display: flex; gap: 10px; }
+.checkout-actions .add { flex: 1; }
+.order-success { text-align: center; display: flex; flex-direction: column; gap: 12px; padding: 20px 0; }
+.order-success h3 { font-size: 1.3rem; }
+
+@media (max-width: 700px) {
+  .nav { display: none; }
+  .hero h2 { font-size: 1.6rem; }
+}
