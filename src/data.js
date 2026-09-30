@@ -75,7 +75,7 @@ export const products = [
 
 export const categories = [
   { id: 'all', name: 'Все' },
-  { id: 'anime', name: 'Аниме-серии' },
+  { id: 'anime', name: 'Аниме фендомы' },
   { id: 'irkutsk', name: 'Иркутск' },
   { id: 'polka', name: 'Коллаборации «Твоя полка»' },
 ]
