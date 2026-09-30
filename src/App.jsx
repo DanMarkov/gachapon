@@ -39,7 +39,9 @@ export default function App() {
     <div className="app">
       <header className="header">
         <div className="container header-inner">
-          <h1 className="logo">ガチャ GACHAPON</h1>
+          <div className="logo">
+            <img src="/logo.png" alt="GACHAPON" className="logo-img" />
+          </div>
           <nav className="nav">
             <a href="#catalog">Каталог</a>
             <a href="#about">О нас</a>
@@ -56,8 +58,8 @@ export default function App() {
         <div className="container">
           <h2>Гачапон-автоматы для вашего города</h2>
           <p>
-            Аниме-мерч и иркутские сувениры в капсулах. Готовые автоматы и
-            изготовление под заказ.
+            Гачапон-автоматы с аниме-капсулами, иркутскими сувенирами и
+            коллаборациями с местными магазинами.
           </p>
           <a className="hero-cta" href="#catalog">Смотреть каталог</a>
         </div>
@@ -99,9 +101,9 @@ export default function App() {
           <h2>О нас</h2>
           <p>
             Мы делаем и устанавливаем гачапон-автоматы с капсульными игрушками
-            и сувенирами: аниме-мерч для тематических мест и сувениры Иркутска
-            и Байкала для туристов. Автоматы можно заказать под ваш город,
-            с вашим брендингом и тематикой капсул.
+            и сувенирами: аниме-серии для тематических мест, иркутские
+            сувениры для туристов и эксклюзивные коллаборации с местными
+            магазинами вроде «Твоей полки».
           </p>
         </section>
 
