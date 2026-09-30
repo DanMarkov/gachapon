@@ -5,7 +5,7 @@ export const products = [
     category: 'irkutsk',
     price: 40000,
     image: 'gachapon_irkutsk.jpg',
-    description: 'Автомат с капсулами иркутской тематики: сувениры, магниты Байкала, брелоки нерпы.',
+    description: 'Автомат с капсулами иркутской тематики: сувениры, магниты Байкала, брелки нерпы.',
     badge: 'Локальный',
   },
   {
@@ -32,7 +32,7 @@ export const products = [
     category: 'anime',
     price: 45000,
     image: 'one_piece.png',
-    description: 'Автомат с капсулами по мотивам «One Piece»: фигурки, брелоки, стикеры любимых персонажей.',
+    description: 'Автомат с капсулами по мотивам «One Piece»: фигурки, брелки, стикеры любимых персонажей.',
     badge: 'Аниме',
   },
   {
@@ -41,7 +41,7 @@ export const products = [
     category: 'anime',
     price: 45000,
     image: 'jojo.jpg',
-    description: 'Капсулы с мерчем «JoJo\'s Bizarre Adventure»: фигурки стендов, брелоки, значки.',
+    description: 'Капсулы с мерчем «JoJo\'s Bizarre Adventure»: фигурки стендов, брелки, значки.',
     badge: 'Аниме',
   },
   {
@@ -50,7 +50,7 @@ export const products = [
     category: 'anime',
     price: 46000,
     image: 'Pokemon.jpg',
-    description: 'Автомат с покемонами: фигурки, брелоки и стикеры популярных покемонов.',
+    description: 'Автомат с покемонами: фигурки, брелки и стикеры популярных покемонов.',
     badge: 'Хит',
   },
   {
