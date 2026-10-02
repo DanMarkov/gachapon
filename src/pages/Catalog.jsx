@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { products, categories, formatPrice } from '../data'
 import { useCart } from '../cart-context'
+import { track } from '../track'
 
 export default function Catalog() {
   const [activeCategory, setActiveCategory] = useState('all')
@@ -38,7 +39,15 @@ export default function Catalog() {
               <p className="card-desc">{p.description}</p>
               <div className="card-footer">
                 <span className="price">{formatPrice(p.price)}</span>
-                <button className="add" onClick={() => addToCart(p)}>В корзину</button>
+                <button
+                  className="add"
+                  onClick={() => {
+                    addToCart(p)
+                    track('Добавил в корзину', { name: p.name, price: p.price })
+                  }}
+                >
+                  В корзину
+                </button>
               </div>
             </article>
           ))}

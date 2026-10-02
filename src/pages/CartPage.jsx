@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { formatPrice } from '../data'
 import { useCart } from '../cart-context'
+import { track } from '../track'
 
 export default function CartPage() {
   const { cart, changeQty, removeItem, clearCart } = useCart()
@@ -13,6 +14,12 @@ export default function CartPage() {
   const submitOrder = (e) => {
     e.preventDefault()
     const id = 'G-' + Math.floor(100000 + Math.random() * 900000)
+    track('Оформил заказ', {
+      orderId: id,
+      items: cart.map((i) => i.name).join(', '),
+      total,
+      city: form.city,
+    })
     setOrderId(id)
     clearCart()
   }

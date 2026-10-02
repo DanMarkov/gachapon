@@ -1,6 +1,8 @@
+import { useEffect } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { products, formatPrice } from '../data'
 import { useCart } from '../cart-context'
+import { track } from '../track'
 
 export default function Product() {
   const { id } = useParams()
@@ -8,6 +10,10 @@ export default function Product() {
   const { addToCart } = useCart()
 
   if (!product) return <Navigate to="/catalog" replace />
+
+  useEffect(() => {
+    track('Просмотр товара', { name: product.name, price: product.price })
+  }, [product?.id])
 
   const related = products
     .filter((p) => p.category === product.category && p.id !== product.id)
@@ -34,7 +40,13 @@ export default function Product() {
             или в Telegram.
           </p>
           <div className="product-actions">
-            <button className="add" onClick={() => addToCart(product)}>
+            <button
+              className="add"
+              onClick={() => {
+                addToCart(product)
+                track('Добавил в корзину', { name: product.name, price: product.price })
+              }}
+            >
               В корзину
             </button>
             <Link className="add outline" to="/cart">Перейти в корзину</Link>
