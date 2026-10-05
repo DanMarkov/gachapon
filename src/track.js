@@ -10,7 +10,7 @@ export const track = (name, data) => {
   }
 
   if (typeof window !== 'undefined' && window.ym && YM_GOALS[name]) {
-    window.ym(YOUR_COUNTER_ID, 'reachGoal', YM_GOALS[name], data)
+    window.ym(113435642, 'reachGoal', YM_GOALS[name], data)
   }
 }
 
